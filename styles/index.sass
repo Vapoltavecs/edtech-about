@@ -1,0 +1,760 @@
+@font-face
+    font-family: "Century Gothic"
+    src: url('../fonts/centurygothic/centurygothic.ttf')
+    font-weight: 400
+
+@font-face
+    font-family: "Century Gothic"
+    src: url('../fonts/centurygothic/centurygothic_bold.ttf')
+    font-weight: 700
+
+@font-face
+    font-family: "Montserrat"
+    src: url('../fonts/Montserrat/Montserrat-Medium.ttf')
+    font-weight: 500
+
+body
+    font-family: "Century Gothic"
+    background: #D1DBFF
+
+%text
+    font-weight: 400
+    font-size: 1.56em
+    line-height: 31px
+    letter-spacing: 0.05em
+    color: #0A1C26
+%button
+    font-weight: 700
+    font-size: 1.875em
+    letter-spacing: 0.05em
+    color: #FBFFFF
+    text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15)
+    text-decoration: none
+    background: linear-gradient(94.59deg, #DDCCFF 0%, #B2C3FF 99.99%, #D1DBFF 100%)
+    box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.05)
+    padding: 28px 42px
+    transition: all .3s
+    border-radius: 10px
+    &:hover
+        background-color: linear-gradient(94.59deg, #6C22FF 0%, #5B7FFF 99.99%, #D1DBFF 100%)
+
+%title
+    font-weight: 700
+    font-size: 3.125em
+    line-height: 105%
+    letter-spacing: 0.05em
+    color: #FBFFFF
+    text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25)
+
+%title__mobile
+    @extend %title
+    font-size: 36px
+    line-height: 44px
+
+.container
+    max-width: 1395px
+    margin: 0 auto
+
+.header
+    padding: 11px 0px
+    background: rgba(255, 255, 255, 0.4)
+    box-shadow: 0px 1px 7px rgba(255, 255, 255, 0.25)
+    backdrop-filter: blur(15px)
+
+    &__wrapper
+        display: flex
+
+        align-center: center
+        justify-content: space-between
+
+    &__menu
+        list-style: none
+        display: flex
+        margin-left: 70px
+        &-item
+            margin: 0px 50px
+
+        &-link
+            color: black
+            font-weight: 400
+            font-size: 1.5em
+            line-height: 29px
+            letter-spacing: 0.05em
+            text-decoration: none
+            &:hover
+                border: 1px solid
+                border-image-source: linear-gradient(94.59deg, #AF87FF 0%, #5B7FFF 99.99%, #D1DBFF 100%)
+
+    &__nav
+        display: flex
+        align-items: center
+    &__contacts
+        display: flex
+        flex-direction: column
+        justify-content: center
+        &-pretitle
+            display: block
+            font-weight: 400
+            font-size: 18px
+            line-height: 22px
+            letter-spacing: 0.05em
+            color: #5E5E5E
+            text-decoration: none
+
+        &-title
+            display: block
+            color: black
+            font-weight: 400
+            font-size: 1.5em
+            line-height: 29px
+            letter-spacing: 0.05em
+            text-decoration: none
+    &__main
+        display: flex
+        align-items: center
+
+.main
+    background-image: url('../images/backgrounds/1.png')
+    background-repeat: no-repeat
+    background-position: bottom right
+    padding-bottom: 140px
+    box-shadow: 0px 9px 114px rgba(0, 0, 0, 0.15)
+    & main
+        padding: 60px 0px 0px
+    &__opportunities
+        max-width: 740px
+        &-item
+            margin-left: auto
+            max-width: 580px
+            font-weight: 400
+            font-size: 1.2em
+            line-height: 1.5em
+            letter-spacing: 0.05em
+            color: #0A1C26
+            margin-top: 75px
+            background: linear-gradient(94.81deg, rgba(255, 255, 255, 0.24) 0%, rgba(255, 255, 255, 0.12) 100%)
+            box-shadow: 0px 0px 46px rgba(0, 0, 0, 0.05), 0px 1px 7px rgba(255, 255, 255, 0.25)
+            backdrop-filter: blur(15px)
+            display: flex
+            align-items: center
+            min-height: 160px
+            padding: 0 35px
+            border-radius: 10px
+            border: 1px solid white
+            &:first-child
+                margin-top: 80px
+            &:nth-child(2n)
+                margin-left: 0
+    &__title
+        font-style: normal
+        font-weight: 700
+        font-size: 50px
+        line-height: 86px
+        letter-spacing: 0.05em
+        color: #FBFFFF
+        text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25)
+
+    &__button
+        @extend %button
+        margin-top: 65px
+        display: inline-block
+        transition: all .3s
+
+.title
+    @extend %title
+
+.advantagers
+    padding: 175px 0px
+
+    background: url('../../images/backgrounds/2.png') center center no-repeat
+    background-size: cover
+    &__title
+        line-height: 61px
+        letter-spacing: 0.05em
+
+    &__wrapper
+        display: flex
+        justify-content: space-between
+    &__text
+        margin-top: 50px
+        line-height: 31px
+        @extend %text
+    &__content
+        max-width: 610px
+
+    &__cards
+        display: grid
+        grid-gap: 45px
+        grid-template-columns: repeat(2, 1fr)
+        max-width: 675px
+    &__card
+        background: #FFFFFF
+        box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.05), 0px 1px 7px rgba(255, 255, 255, 0.25)
+        border-radius: 10px
+        padding: 45px 29px 45px 45px
+        &-title
+            color: #0A1C26
+            font-size: 1.25em
+            font-weight: 700
+            font-family: inherit
+            letter-spacing: 0.05em
+            margin-top: 30px
+            line-height: 22px
+
+        &-content
+            font-weight: 400
+            font-size: 1em
+
+            color: #454748
+            letter-spacing: 0.05em
+            margin-top: 20px
+            max-height: 76px
+        &-icon
+            display: block
+            width: 80px
+            height: 80px
+
+.about
+    background: linear-gradient(95.24deg, #A679FF 23.07%, #766EFF 61.53%, #5B7FFF 98.4%)
+    padding: 150px 0px
+    &__title
+        max-width: 1015px
+        text-align: center
+        margin: 0 auto
+        @extend %title
+    &__cards
+        display: grid
+        grid-template-columns: 1fr 1fr
+        gap: 45px
+        margin-top: 85px
+    &__card
+        padding: 40px
+        background-color: white
+        box-shadow: 0px 0px 46px rgba(0, 0, 0, 0.15), 0px 1px 7px rgba(255, 255, 255, 0.25)
+        backdrop-filter: blur(15px)
+        border-radius: 10px
+        &-icon
+            border-radius: 50%
+        &-header
+            display: flex
+            align-items: center
+        &-title
+            margin-left: 25px
+            letter-spacing: 0.05em
+            font-size: 1.8em
+            font-weight: 700
+        &-content
+            margin-top: 20px
+            color: #5E5E5E
+            font-size: 1.1em
+            font-weight: 400
+.contacts
+    background: url('../images/backgrounds/5.png') center center
+    padding: 175px 0px
+    &__wrapper
+        display: flex
+        align-items: start
+        margin-top: 120px
+        justify-content: space-between
+    &__text
+        &-title
+            @extend %text
+            font-weight: 700
+        &-content
+            margin-top: 35px
+            max-width: 470px
+            @extend %text
+
+.team
+    padding: 100px 0px
+
+    filter: drop-shadow(0px 4px 46px rgba(0, 0, 0, 0.15))
+    background: url('../images/backgrounds/team.png')
+    background-size: cover
+    &__photo
+        &-swiper
+            width: 380px
+            overflow: hidden
+            border-radius: 10px
+    &__wrapper
+        display: flex
+        align-items: end
+        justify-content: space-between
+    &__info
+        &-swiper
+            max-width: 845px
+            width: 100%
+            overflow: hidden
+        &-title
+            font-weight: 700
+            font-size: 33px
+
+            letter-spacing: 0.05em
+            color: #0A1C26
+        &-name
+            font-weight: 700
+            font-size: 30px
+
+            letter-spacing: 0.05em
+            color: #FBFFFF
+            text-shadow: 0px 4px 7px rgba(0, 0, 0, 0.25)
+            margin-top: 25px
+        &-position
+            font-weight: 700
+            font-size: 20px
+
+            letter-spacing: 0.05em
+            color: #5E5E5E
+            margin-top: 15px
+    &__about
+        display: flex
+        align-items: center
+        &-icon
+            border-radius: 50%
+        &-text
+            font-weight: 400
+            font-size: 18px
+            line-height: 22px
+            letter-spacing: 0.05em
+            color: #5E5E5E
+            margin-right: 30px
+    &__footer
+        display: flex
+        align-content: center
+        justify-content: space-between
+        margin-top: 40px
+    &__navigate
+        display: flex
+        align-items: center
+
+        &-icon
+            cursor: pointer
+            max-height: 64px
+            &:hover
+                circle
+
+                    fill: black
+                path
+
+                    fill: white
+        &-prev
+            transform: rotate(180deg)
+            margin-left: 15px
+
+.form
+    padding: 60px
+    max-width: 675px
+    background: linear-gradient(94.81deg, rgba(255, 255, 255, 0.24) 0%, rgba(255, 255, 255, 0.12) 100%)
+    box-shadow: 0px 0px 46px rgba(0, 0, 0, 0.15), 0px 1px 7px rgba(255, 255, 255, 0.25)
+    backdrop-filter: blur(15px)
+    border-radius: 10px
+    &__button
+        @extend %button
+        border: none
+        cursor: pointer
+        display: inline-block
+        margin: 70px auto 0px
+
+        display: flex
+    &__input
+        width: 100%
+        display: inline-block
+        margin-top: 50px
+        border: none
+        display: inline-block
+        border-bottom: 2px solid white
+        font-size: 1.25em
+        outline: none
+        background: none
+        padding: 15px 20px
+
+        &:first-child
+            margin-top: 0
+        &::placeholder
+            color: #9B9B9B
+            text-transform: uppercase
+    &__policity
+        margin-top: 20px
+        font-weight: 400
+        font-size: 15px
+        line-height: 18px
+        text-align: center
+        letter-spacing: 0.05em
+        color: #939393
+
+.footer
+    padding-bottom: 90px
+    &__wrapper
+        border-top: 3px solid white
+        padding-top: 55px
+    &__content
+        padding-top: 1px solid white
+        display: flex
+        align-items: start
+        justify-content: space-between
+        margin-top: 20px
+        ul
+            li
+                font-weight: 400
+                font-size: 18px
+                line-height: 22px
+                color: rgba(0, 0, 0, 0.7)
+                margin-top: 20px
+                &:first-child
+                    margin-top: 0
+                a
+                    font-weight: 400
+                    font-size: 18px
+                    line-height: 22px
+                    color: rgba(0, 0, 0, 0.7)
+                    text-decoration: none
+        &-wrap
+            display: flex
+            align-items: start
+            justify-content: space-between
+            gap: 90px
+    &__policity
+        max-width: 380px
+        margin-top: 50px
+        font-weight: 400
+        font-size: 18px
+        line-height: 22px
+        letter-spacing: 0.05em
+
+        color: rgba(10, 28, 38, 0.7)
+    &__contacts
+        margin-top: 20px
+        &-item
+            text-decoration: none
+    &__input
+        background: linear-gradient(94.81deg, rgba(255, 255, 255, 0.24) 0%, rgba(255, 255, 255, 0.12) 100%)
+        box-shadow: 0px 0px 40px rgba(0, 0, 0, 0.1), 0px 1px 7px rgba(255, 255, 255, 0.25)
+        backdrop-filter: blur(15px)
+        border-radius: 10px
+        border: 2px solid white
+        padding: 23px 20px
+        outline: none
+        width: 320px
+        &::placeholder
+            color: #939393
+            display: block
+    &__button
+        @extend %button
+        display: block
+        font-size: 18px
+        line-height: 22px
+        padding: 12px 20px
+        max-width: 170px
+        margin-top: 22px
+    &__mobile
+        display: none
+
+@media (max-width: 1400px)
+    .main
+        &__title
+            font-size: 2.2em
+            line-height: 44px
+
+    .title
+        font-size: 2.2em
+        line-height: 130%
+
+    .container
+        padding: 0 20px
+    .advantagers
+
+        &__cards
+            grid-gap: 30px
+        &__card
+            &-content
+                max-height: 100%
+        &__content
+            max-width: 550px
+        &__text
+            font-size: 18px
+            line-height: 22px
+
+@media (max-width: 1250px)
+    .about
+        &__cards
+            grid-template-columns: 1fr
+            max-width: 675px
+            margin: 40px auto 0px
+        &__title
+            font-size: 2.2em
+            max-width: 730px
+        &__card
+            &-header
+                flex-direction: column
+                justify-content: center
+                gap: 10px
+                text-align: center
+            &-title
+                margin-left: 0
+            &-content
+                text-align: center
+
+    .advantagers
+        &__wrapper
+            flex-direction: column
+            justify-content: center
+        &__cards
+            max-width: 100%
+            margin-top: 50px
+        &__content
+            text-align: center
+            max-width: 100%
+            max-width: 600px
+            margin: 0 auto
+        &__title
+            max-width: 440px
+            margin: 0 auto
+            line-height: 44px
+        &__text
+            margin-top: 30px
+            line-height: 22px
+        &__button
+            display: none
+    .company__wrapper
+        background: none
+
+    .header
+        padding: 7px 0px
+        &__menu
+            display: none
+        &__contacts
+            &-pretitle
+                font-size: 1em
+            &-title
+                font-size: 1.3em
+
+        &__logo
+            widows: 73px
+            height: 64px
+    .main
+        background-image: url('../images/backgrounds/1-tablet.png')
+        background-size: cover
+        background-position: right 0 bottom 0
+
+        background-repeat: no-repeat
+        padding-bottom: 0px
+
+        main
+            padding: 15px 0px 30px
+        &__title
+            font-size: 1.8em
+            & span
+                display: block
+
+        &__button
+            font-size: 1.1em
+            margin-top: 35px
+            padding: 16px
+        &__opportunities
+            max-width: 470px
+            &-item
+                margin-top: 15px
+                padding: 20px
+                max-width: 400px
+                min-height: auto
+                font-size: 0.9em
+                line-height: 17px
+
+                &:first-child
+                    margin-top: 25px
+    .advantagers
+
+        background: url('../images/backgrounds/2-mobile.png') right no-repeat
+        padding-top: 100px
+    .team
+        &__info
+            &-swiper
+                width: 100%
+                max-width: 550px
+        &__wrapper
+            align-items: center
+
+    .contacts
+        &__wrapper
+            flex-direction: column
+            justify-content: center
+            align-items: center
+            margin-top: 30px
+        &__text
+            &-content
+                max-width: 750px
+                text-align: center
+                font-size: 1.2em
+                line-height: 22px
+                margin-top: 0
+            &-title
+                display: none
+        &__title
+            text-align: center
+        & .form
+            margin-top: 50px
+    .footer
+        &__content
+            &-wrap
+                display: block
+            &-item
+                &:last-child
+                    margin-top: 50px
+
+@media (max-width: 1000px)
+    .team
+        &__wrapper
+            flex-direction: column
+            gap: 30px
+
+@media (max-width: 800px) 
+    .main
+        background: url('../images/backgrounds/1-mobile.png')
+        background-size: cover
+
+@media (max-width: 650px)
+    .container
+        padding: 0px 15px
+    .main
+
+        &__button
+            margin: 35px auto 0px
+            display: block
+            padding: 16px 40px
+            text-align: center
+            width: 250px
+    .advantagers
+        z-index: 500
+        &__title
+            text-align: start
+            font-size: 23px
+            line-height: 28px
+        &__text
+            font-size: 1em
+            margin-top: 30px
+            text-align: start
+        &__cards
+            grid-template-columns: 1fr
+        &__card
+            text-align: center
+            &-icon
+                margin: 0 auto
+
+    .team
+        padding: 40px 15px
+
+        background: linear-gradient(94.81deg, rgba(255, 255, 255, 0.24) 0%, rgba(255, 255, 255, 0.12) 100%)
+        max-width: 90%
+        margin: 40px auto
+        box-shadow: 0px 0px 46px rgba(0, 0, 0, 0.15), 0px 1px 7px rgba(255, 255, 255, 0.25)
+        backdrop-filter: blur(15px)
+        border-radius: 10px
+        &__photo
+            &-swiper
+                max-width: 150px
+        &__info
+
+            &-swiper
+                max-width: 310px
+                margin: 0 auto
+            &-title
+                font-size: 18px
+                line-height: 100%
+                text-align: center
+            &-name, &-position
+                text-align: center
+        &__footer
+            flex-direction: column-reverse
+            justify-content: center
+            align-items: center
+        &__about
+            &-text
+                margin-right: 0
+                font-weight: 700
+                font-size: 0.9em
+                letter-spacing: 0.05em
+                color: #FBFFFF
+                text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15)
+                text-decoration: none
+                background: linear-gradient(94.59deg, #DDCCFF 0%, #B2C3FF 99.99%, #D1DBFF 100%)
+                box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.05)
+                padding: 16px 40px
+                transition: all .3s
+                border-radius: 10px
+                &:hover
+                    background-color: linear-gradient(94.59deg, #6C22FF 0%, #5B7FFF 99.99%, #D1DBFF 100%)
+
+            &-icon
+                display: none
+        &__navigate
+            margin-top: 25px
+
+    .contacts
+        margin-top: 50px
+        padding: 0
+        margin-bottom: 80px
+        &__title
+            font-size: 23px
+            text-align: start
+        &__text-content
+            font-size: 1em
+            text-align: start
+    .form
+        padding: 30px
+        &__input
+            margin-top: 20px
+            font-size: 14px
+        &__button
+            margin-top: 30px
+            display: block
+            width: 100%
+            font-size: 15px
+            padding: 15px
+        &__policity
+            font-size: 12px
+            text-align: start
+    .footer
+        &__wrapper
+            display: none
+        &__mobile
+            display: block
+        &__header
+            display: flex
+            justify-content: space-between
+            align-items: start
+        &__menu
+
+            &-item
+                font-size: 1em
+                margin-top: 15px
+                &:first-child
+                    margin-top: 0
+        &__logo
+            height: 56px
+        &__links
+            margin-top: 50px
+            list-style: none
+            li
+                display: inline-block
+                margin-top: 30px
+                &:first-child
+                    margin-top: 0
+
+                a
+                    text-decoration: none
+                    color: black
+                    font-weight: 400
+                    font-size: 1em
+        &__contacts-links
+            margin-top: 50px
+            li
+                margin-top: 10px
+                &:first-child
+                    margin-top: 0
+                a
+                    text-decoration: none
+                    color: black
+                    font-weight: 400
+                    font-size: 1em
+        &__contacts
+            margin-top: 20px
