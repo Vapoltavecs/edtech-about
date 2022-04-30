@@ -55,6 +55,47 @@ body
     max-width: 1395px
     margin: 0 auto
 
+.dropdown:hover .dropdown__content
+    opacity: 1
+
+.dropdown
+    position: relative
+
+    &__content
+        position: absolute
+        top: 80px
+        background: white
+        opacity: 0
+        transition: all .3s ease-in-out
+        background: #FBFFFF
+        border-radius: 0px 0px 10px 10px
+        padding: 30px
+        max-width: 380px
+        width: 380px
+        left: -40%
+        transition-delay: .2s
+
+        z-index: 500
+    li
+        margin-top: 20px
+        max-width: 380px
+        a
+            text-decoration: none
+            font-size: 16px !important
+            line-height: 20px !important
+            letter-spacing: 0.05em !important
+            color: #0A1C26
+            transition: all .3s
+            &:hover
+                background: linear-gradient(94.59deg, #AF87FF 0%, #5B7FFF 99.99%, #D1DBFF 100%)
+                -webkit-background-clip: text
+                -webkit-text-fill-color: transparent
+                background-clip: text
+                text-fill-color: transparent
+
+                &:first-child
+                    margin-top: 0
+
 .header
     padding: 11px 0px
     background: rgba(255, 255, 255, 0.4)
@@ -70,20 +111,29 @@ body
     &__menu
         list-style: none
         display: flex
+
         margin-left: 70px
         &-item
+
             margin: 0px 50px
 
-        &-link
-            color: black
-            font-weight: 400
-            font-size: 1.5em
-            line-height: 29px
-            letter-spacing: 0.05em
-            text-decoration: none
-            &:hover
-                border: 1px solid
-                border-image-source: linear-gradient(94.59deg, #AF87FF 0%, #5B7FFF 99.99%, #D1DBFF 100%)
+        li
+            a
+                color: black
+                font-weight: 400
+                font-size: 1.5em
+                line-height: 29px
+                letter-spacing: 0.05em
+                text-decoration: none
+                position: relative
+                &:hover
+                    &::before
+                        content: ""
+                        width: 100%
+                        height: 1px
+                        bottom: -5px
+                        position: absolute
+                        background: linear-gradient(94.59deg, #AF87FF 0%, #5B7FFF 99.99%, #D1DBFF 100%)
 
     &__nav
         display: flex
@@ -112,6 +162,73 @@ body
     &__main
         display: flex
         align-items: center
+    .burger
+        display: none
+        cursor: pointer
+        position: relative
+        width: 30px
+        height: 30px
+        div
+            width: 30px
+            height: 2px
+            background: black
+            position: absolute
+            left: 0
+            transition: all .3s
+            &:first-child
+                margin-top: 0
+            &:nth-child(2n)
+                top: 10px
+            &:nth-child(3n)
+                top: 20px
+        &.active
+
+            div
+
+                &:nth-child(1n)
+                    transform: rotate(45deg)
+                    top: 7px
+                    left: 0px
+                &:nth-child(2n)
+                    opacity: 0
+                    transform: none
+                &:nth-child(3n)
+                    top: 7px
+                    left: 0px
+                    transform: rotate(-45deg)
+    &-right-wrap
+        display: flex
+        align-items: center
+        gap: 60px
+
+.header__menu-mobile
+    transform: translateX(-100%)
+    transition: all .6s ease-in-out
+    position: fixed
+    height: 100%
+    left: 0
+    width: 100%
+    display: flex
+    align-items: center
+    justify-content: center
+    background: linear-gradient(94.59deg, #AF87FF 0%, #5B7FFF 99.99%, #D1DBFF 100%)
+    z-index: 950
+    display: none
+    ul
+        max-width: 500px
+        margin: 0 auto
+    li
+        font-weight: 700
+        font-size: 25px
+        line-height: 31px
+        text-align: center
+        letter-spacing: 0.05em
+        margin-top: 30px
+        a
+            text-decoration: none
+            color: #FBFFFF
+    &.active
+        transform: translateX(0%)
 
 .main
     background-image: url('../images/backgrounds/1.png')
@@ -140,7 +257,10 @@ body
             min-height: 160px
             padding: 0 35px
             border-radius: 10px
-            border: 1px solid white
+            border: 1px solid
+
+            border-image-source: linear-gradient(269.6deg, rgba(255, 255, 255, 0.6) 0%, rgba(255, 255, 255, 0.3) 100%)
+
             &:first-child
                 margin-top: 80px
             &:nth-child(2n)
@@ -217,6 +337,7 @@ body
 .about
     background: linear-gradient(95.24deg, #A679FF 23.07%, #766EFF 61.53%, #5B7FFF 98.4%)
     padding: 150px 0px
+    margin-top: 150px
     &__title
         max-width: 1015px
         text-align: center
@@ -249,6 +370,7 @@ body
             font-size: 1.1em
             font-weight: 400
 .contacts
+
     background: url('../images/backgrounds/5.png') center center
     padding: 175px 0px
     &__wrapper
@@ -280,21 +402,45 @@ body
         display: flex
         align-items: end
         justify-content: space-between
-    &__info
-        &-swiper
+    &__slider
+        display: flex
+        align-items: center
+        justify-content: space-between
+        position: relative
+        overflow: hidden
+        min-height: 450px
+        display: flex
+        align-items: center
+        width: 100%
+
+    &__slide
+        display: flex
+        align-items: center
+        justify-content: space-between
+        max-width: 1400px
+        position: absolute
+        top: 0
+        left: 0
+        width: 100%
+        display: none
+        opacity: 0
+        &-image
+            border-radius: 10px
+        &-text
             max-width: 845px
-            width: 100%
-            overflow: hidden
+            margin-left: 20px
         &-title
             font-weight: 700
-            font-size: 33px
-
+            font-size: 35px
+            line-height: 43px
+            display: flex
+            align-items: flex-end
             letter-spacing: 0.05em
             color: #0A1C26
         &-name
             font-weight: 700
             font-size: 30px
-
+            line-height: 37px
             letter-spacing: 0.05em
             color: #FBFFFF
             text-shadow: 0px 4px 7px rgba(0, 0, 0, 0.25)
@@ -302,27 +448,75 @@ body
         &-position
             font-weight: 700
             font-size: 20px
-
+            line-height: 25px
             letter-spacing: 0.05em
             color: #5E5E5E
             margin-top: 15px
-    &__about
+        &-footer
+            display: flex
+            align-items: center
+            justify-content: space-between
+            margin-top: 40px
+        &.active
+            display: flex
+            opacity: 1
+        &:nth-child(2n)
+            .team__slide-title
+                font-size: 30px
+                line-height: 100%
+        &:nth-child(3n)
+            .team__slide-title
+                font-size: 30px
+                line-height: 100%
+    &__navigation
         display: flex
         align-items: center
+        justify-content: space-between
+        gap: 20px
+
+        .team__next, .team__prev
+            border-radius: 50%
+            cursor: pointer
+
+    &__info
+        display: flex
+        align-items: center
+        justify-content: space-between
+        position: relative
+        cursor: pointer
         &-icon
             border-radius: 50%
-        &-text
+            margin-left: 20px
+        &-title
             font-weight: 400
             font-size: 18px
             line-height: 22px
             letter-spacing: 0.05em
             color: #5E5E5E
-            margin-right: 30px
-    &__footer
-        display: flex
-        align-content: center
-        justify-content: space-between
-        margin-top: 40px
+    &__modal
+        max-width: 330px
+        padding: 30px 22px
+        font-weight: 400
+        font-size: 14px
+        line-height: 20px
+        letter-spacing: 0.05em
+        color: #5E5E5E
+        position: absolute
+        background: white
+        bottom: -30px
+        left: -110px
+        box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.15)
+        border-radius: 10px
+        opacity: 0
+        display: none
+        & p
+            margin-top: 20px
+            &:first-child
+                margin-top: 0
+        &.active
+            opacity: 1
+            display: block
+
     &__navigate
         display: flex
         align-items: center
@@ -567,32 +761,15 @@ body
         background: url('../images/backgrounds/2-mobile.png') right no-repeat
         padding-top: 100px
     .team
-        &__info
-            &-swiper
-                width: 100%
-                max-width: 550px
-        &__wrapper
-            align-items: center
 
-    .contacts
-        &__wrapper
-            flex-direction: column
-            justify-content: center
-            align-items: center
-            margin-top: 30px
-        &__text
-            &-content
-                max-width: 750px
-                text-align: center
-                font-size: 1.2em
-                line-height: 22px
-                margin-top: 0
+        &__slide
             &-title
-                display: none
-        &__title
-            text-align: center
-        & .form
-            margin-top: 50px
+                font-size: 25px !important
+                line-height: 110%
+            &:nth-child(2n)
+                font-size: 25px !important
+            &:nth-child(3n)
+                font-size: 25px !important
     .footer
         &__content
             &-wrap
@@ -603,11 +780,14 @@ body
 
 @media (max-width: 1000px)
     .team
-        &__wrapper
+        &__slide
             flex-direction: column
-            gap: 30px
+            &-title
+                margin-top: 40px
+        &__slider
+            min-height: 800px
 
-@media (max-width: 800px) 
+@media (max-width: 800px)
     .main
         background: url('../images/backgrounds/1-mobile.png')
         background-size: cover
@@ -641,7 +821,7 @@ body
                 margin: 0 auto
 
     .team
-        padding: 40px 15px
+        padding: 40px 0px
 
         background: linear-gradient(94.81deg, rgba(255, 255, 255, 0.24) 0%, rgba(255, 255, 255, 0.12) 100%)
         max-width: 90%
@@ -649,46 +829,43 @@ body
         box-shadow: 0px 0px 46px rgba(0, 0, 0, 0.15), 0px 1px 7px rgba(255, 255, 255, 0.25)
         backdrop-filter: blur(15px)
         border-radius: 10px
-        &__photo
-            &-swiper
-                max-width: 150px
-        &__info
-
-            &-swiper
-                max-width: 310px
-                margin: 0 auto
-            &-title
-                font-size: 18px
-                line-height: 100%
-                text-align: center
-            &-name, &-position
-                text-align: center
-        &__footer
+        &__user
+            display: flex
             flex-direction: column-reverse
-            justify-content: center
-            align-items: center
-        &__about
-            &-text
-                margin-right: 0
-                font-weight: 700
-                font-size: 0.9em
-                letter-spacing: 0.05em
-                color: #FBFFFF
-                text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15)
-                text-decoration: none
-                background: linear-gradient(94.59deg, #DDCCFF 0%, #B2C3FF 99.99%, #D1DBFF 100%)
-                box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.05)
-                padding: 16px 40px
-                transition: all .3s
-                border-radius: 10px
-                &:hover
-                    background-color: linear-gradient(94.59deg, #6C22FF 0%, #5B7FFF 99.99%, #D1DBFF 100%)
-
-            &-icon
-                display: none
+            text-align: center
         &__navigate
             margin-top: 25px
+            margin-left: 0
+        &__slide
+            &-text
+                margin-left: 0
+            &-footer
+                flex-direction: column-reverse
+                justify-content: center
+                align-items: center
+                margin-top: 50px
+            &-title
+                font-size: 18px !important
+                margin-top: 15px
+            &-name
+                font-size: 25px !important
+            &-position
+                margin-top: 5px
+        &__info
+            &-icon
+                display: none
 
+            &-title
+                cursor: pointer
+                font-size: 14px
+                wdith: 100%
+                text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15)
+                padding: 15px
+                margin: 0px 0px 25px
+                background: linear-gradient(94.59deg, #DDCCFF 0%, #B2C3FF 99.99%, #D1DBFF 100%)
+                box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.05)
+                border-radius: 5px
+                color: white
     .contacts
         margin-top: 50px
         padding: 0
@@ -699,6 +876,12 @@ body
         &__text-content
             font-size: 1em
             text-align: start
+        &__wrapper
+            flex-direction: column
+            gap: 40px
+            justify-content: center
+            
+           
     .form
         padding: 30px
         &__input
@@ -758,3 +941,19 @@ body
                     font-size: 1em
         &__contacts
             margin-top: 20px
+@media (max-width: 1250px)
+    .burger
+        display: block !important
+    .header__menu-mobile
+        display: flex
+@media (max-width: 650px)
+    .team
+        &__slider
+            min-height: 640px
+        &__slide
+            &-image
+                width: 150px
+            &-title
+@media (max-width: 350px) 
+    .footer__input
+        max-width: 100%
